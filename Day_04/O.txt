@@ -1,0 +1,59 @@
+📂 File I/O ka matlab kya hota hai?
+
+File I/O = File Input / Output
+
+👉 Simple words me:
+
+Input → file se data read karna
+
+Output → file me data write / save karna
+
+🧠 Real-life example:
+
+Notebook = file
+
+Padhna = read
+
+Likhna = write
+
+
+🔓 File open karna (open function)
+file = open("data.txt", "r")
+
+🔑 Modes (ye yaad rakhna zaroori hai):
+Mode	Meaning
+"r"	Read (file padhna)
+"w"	Write (purana data delete, naya likhna)
+"a"	Append (purane ke end me add)
+"x"	Create new file
+"rb"	Read binary
+"wb"	Write binary
+
+📖 File Read karna
+1️⃣ Puri file read karna
+file = open("data.txt", "r")
+content = file.read()
+print(content)
+file.close()
+
+2️⃣ Line by line read
+file = open("data.txt", "r")
+for line in file:
+    print(line)
+file.close()
+
+✍️ File me Write karna
+1️⃣ Write (old data delete ho jayega)
+file = open("data.txt", "w")
+file.write("Hello Python AI ML")
+file.close()
+
+2️⃣ Append (safe option)
+file = open("data.txt", "a")
+file.write("\nDay 6 completed")
+file.close()
+
+🔐 BEST PRACTICE (Interview + Real Projects)
+with keyword use karo (auto close file)
+with open("data.txt", "r") as file:
+    print(file.read())
